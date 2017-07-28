@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="initial-scale=1.0">
+<link type="text/css" rel="stylesheet" href="../style/mobile.css" media="(max-width: 500px)"/>
+<link type="text/css" rel="stylesheet" href="../style/desktop.css" media="(min-width: 501px)"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<link href="../lightbox/src/css/lightbox.css" rel="stylesheet">
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Wire+One" rel="stylesheet">
+<title>Jenny Maria Hagglund</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+       
+
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+
+
+<script type="text/javascript">
+
+/* --- GOOGLE MAP --- */
+
+function myMap() {
+  var myCenter = new google.maps.LatLng(-27.535383,153.067889);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "Here!"
+  });
+  infowindow.open(map,marker);
+}
+
+</script>
+</head>
+<body>
+<!---- Navigator MOBILE --->       
+
+    <div id="mobilenav">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">MENU</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#work">Portfolio</a>
+                <a href="../index.html#contact">Contact</a>
+        </div></div>
+    </div>
+
+<!---- Navigator DESKTOP --->  
+
+    <div id="navigationp">
+        <div class="col-1"></div>
+        <div class="col-3"><a href="../index.html"><img src="../assets/mlogo.png" width="54%"></a></div>
+     
+        <div class="col-7" style="text-align: right; padding-right: 30px;">
+          <div id="nav"><a href="../index.html#about">ABOUT</a></div>
+		      <div id="nav"><a href="../index.html#work">PORTFOLIO</a></div>
+		      <div id="nav"><a href="../index.html#contact">CONTACT</a></div>
+           <!--- <img src="socialicons/fbW.png" width="25"/>  
+	       	<img src="socialicons/insW.png" width="25"/> 
+	       	<img src="socialicons/mailW.png" width="25"/>--->
+        </div>
+        
+    </div>
+<!--- navigation div end -->
+<!---- Project --->
+<div id="project">
+  
+  <div id="del1">
+    <h2>WEBSITE DESIGN</h2>
+    <br/>
+    <p> This is a web site I created for an assignment during "Dynamic Multimedia Systems" </p>
+    <br/>
+    <br/>
+     <a href="../webobsession/obsession/index.html"  target="_blank">VIEW WEBSITE</a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <h4>Context: Bachelor of Multimedia<br/>Year: 2016</h4>
+    <br/>
+    <br/>
+    <a href="../index.html#work">BACK TO PORTFOLIO</a>
+  </div>
+  
+  <div id="del2">
+    
+    <br/>
+        <p><a href="../assets/home.png" rel="lightbox[box2]" title="my caption" width="100px" ><img src="../assets/home.png" width="250px"/></a>
+        <a href="../assets/about.png" rel="lightbox[box2]" title="my caption" width="100px" ><img src="../assets/about.png" width="250px"/></a></p>
+        <br/>
+
+    <p><a href="../assets/events.png" rel="lightbox[box2]" title="my caption" width="100px" ><img src="../assets/events.png" width="250px"/></a>
+    <a href="../assets/contact.png" rel="lightbox[box2]" title="my caption" width="100px" ><img src="../assets/contact.png" width="250px"/></a></p>
+  <h4>click images to enlarge</h4>
+  </div>
+  
+  
+  
+        
+    
+</div>
+
+
+<!--- Footer -->
+        <div id="footer"> 
+            <br/><h7>© Jenny Maria Hägglund 2017</h7>
+        </div> <!--- Footer div end --> 
+    </div><!--- Container div end --> 
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2-azGitVHBw_yuFa9Fg4cCEHvlv_oPXo&callback=myMap"></script>
+
+<script src="../lightbox/src/js/lightbox.js"></script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+/* SCROLL */
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

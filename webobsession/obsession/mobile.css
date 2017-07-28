@@ -1,0 +1,743 @@
+/*
+* 
+    – General –
+    — Header/Navigation –
+    – Social Icons Header – 
+    – Index Page –
+    – Service Page (php, including Table + reading/displaying from database) –
+    – Gallery Page –
+    – Whats on Page (php, not used yet) –
+    – About Page (php) –
+    – Contact Page –
+    – Contact Form (writing to database) –
+    – Universal Footer –
+    – All The Small Things –
+*/
+
+/*
+* — General —
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+}
+
+#body {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#background {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*
+* — Header with Navigation —
+*/
+
+#header {
+      display: flex;
+      width: 100%;
+      height: 45px;
+      background-color: black;
+      border-bottom-style: hidden;
+      border-bottom-width: thin;
+      opacity: 0.8;
+      justify-content: center;
+}
+
+#headerspace {
+      visibility: hidden;
+}
+
+#trans {
+    visibility: hidden;
+    width: 600px;
+    height: 20px;
+    background-color: transparent;
+    padding-top: 10px;
+}
+
+/*
+* — Navigation —
+*/
+
+#nav {
+    width: 100%;
+     display: flex;
+     padding-right: 6px;
+     font-family: Century Gothic, sans-serif;
+     font-weight: lighter;
+     padding-top: 14px;
+}
+#book {
+     display: flex;
+     width: 200px;
+     height: 30px;
+     margin: 10px;
+     font-family: Century Gothic, sans-serif;
+     font-weight: lighter;
+     text-align: left;
+     float: left;
+}
+
+/*
+* — Social Icons Header —
+*/
+
+#icontop {
+    padding-top: 8px;
+    float: right;
+    visibility: hidden;
+}
+
+/*
+* — Index Page —
+*/
+
+#indexbody {
+    min-height:600px;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+#indexcontent {
+     width: 80px;
+     height: 30px;
+     margin: 10px;
+     font-family: Century Gothic, sans-serif;
+     font-weight: lighter;
+     text-align: center;
+     margin-left: 15px;
+     margin-right: 15px;
+     float: left;
+}
+
+/*
+* — Service Page —
+*/
+
+.servicebody {
+    min-height:600px;
+    min-width: 40px;
+    max-width: 451px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: -1;/*
+    opacity: 0.6;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250,0.9);
+}
+
+#heading {
+    height: 15px;
+    max-width: 451px;
+}
+
+#tablealign {
+    justify-content: center;
+    min-width: 40px;
+    max-width: 151px;
+    height: 70%; 
+    margin: 0 auto; 
+}
+
+table {
+    display: table;
+    border-spacing: 0;
+    border-color: black;
+    width: 100%;
+    border-collapse: collapse; 
+    color: #333; 
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    position: relative;
+}
+
+th {
+    background: white; 
+    color: orange;
+    font-weight: normal;
+    padding: 15px;
+    text-align: center;
+    height: 30px;
+    border: 1px solid transparent; /* No more visible border */
+    transition: all 0.3s; 
+    
+}
+
+tr {
+    color: black;
+    padding: 15px;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid #CCC;
+    height: 30px;
+    background: #FAFAFA; /* Lighter grey background */
+    border: 1px solid transparent; /* No more visible border */
+    transition: all 0.3s; 
+    text-align: center;
+}
+
+/* Cells in even rows (2,4,6...) are one color */ 
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+
+/*
+* — Gallery Page —
+*/
+
+.gallerybody {
+    min-height:600px;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: -1;/*
+    opacity: 0.6;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250);
+    border-collapse: collapse; 
+}
+
+.container1 {
+    flex-grow: 1;
+    display: block;
+    margin-top: 50px;
+}
+
+.container2 {
+    float: left;
+    flex-grow: 1;
+}
+
+.img {
+    flex-grow: 1;
+    height: 200px;
+    margin: 10px;
+    float: left;
+    opacity: 1.0;
+    display: block;
+}
+
+.img1 {
+    flex-grow: 1;
+    height: 100px;
+    margin: 10px;
+    float: center;
+    opacity: 1.0;
+}
+
+/* gallery display */
+.photos {
+  display: block;
+}
+
+.photos ul {
+  list-style: none;
+
+}
+
+.photos ul li { display: inline; }
+
+.photos ul li a {
+  display: block;
+  float: left;
+  padding: 4px;
+  margin-right: 10px;
+  margin-bottom: 7px;
+  opacity: 0.75;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.photos ul li a:hover {
+  opacity: 1.0;
+}
+
+.photos ul li a img {
+  border: 6px solid #e1d9ec;
+}
+
+
+/*
+* — Event Page —
+*/
+
+.events {
+    margin-top: 50px;
+}
+
+.eventbody {
+    min-height:600px;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: -1;/*
+    opacity: 0.6;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250,0.9);
+}
+
+.eventbox {
+    flex-grow: 1;
+    display: block;
+    margin-top: 50px;
+    padding-right: 20px;
+}
+
+
+/*
+* — Do not know where you are used... —
+*/
+
+#content {
+    flex-grow: 1;
+    background-color: white;
+}
+
+/*
+* — About Page —
+*/
+
+.aboutbody {
+    min-height:600px;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: -1;/*
+    opacity: 0.6;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250,0.9);
+}
+
+.aboutcontainer {
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+.about1 {
+    flex-grow: 1;
+    display: inline;
+}
+
+.aboutcontainer2 {
+    flex-grow: 1;
+}
+
+.about2 {
+    display: inline-block;
+    height: 200px;
+}
+
+.about3 {
+    display: inline;
+}
+
+.img2 {
+    display: inline-block;
+}
+
+/*
+* — Contact Page —
+*/
+
+.contactbody {
+    min-height:600px;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: -1;/*
+    opacity: 0.6;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250,0.9);
+}
+
+.contactleft {
+    margin-top: 50px;
+    float: left;
+    flex-grow: 1;
+}
+
+.map {
+    float: left;
+    width: 300px;
+    margin-top: 150px;
+}
+.map2 {
+    float: left;
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+/*
+* — Contact Form —
+*/
+
+#contactinfo, #message {
+    border: none;
+    font-size: 1em;
+}
+
+#contactinfo label {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#contactinfo input {
+    position: absolute;
+    left: 80px;
+}
+
+#message label {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#nameinput #lastnameinput #addressinput #phoneinput {
+    width: 30em;
+    border: none;
+    font-size: 1em;
+}
+
+#submit {
+    font-size: 14px;
+}
+
+#submitbutton {
+    border: none;
+    padding: 0em 0 0 0;
+    text-align: center;
+    
+}
+
+form {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    margin: 0px 0px 0px 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #FBAD64;
+}
+
+fieldset {
+    margin-bottom: 10px;
+    position: relative;
+    padding: 1em 1em 0.5em 1em;
+
+}
+
+input, placeholder {
+    font-size: 7px;
+}
+
+input, textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+input, submit {
+    background-color: white;
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+legend span {
+    left: 0;
+    margin-top: 0.5em;
+    margin-left: 0em;
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/*
+* — Universal Footer —
+*/
+
+#footer {
+    visibility: hidden;
+      display: flex;
+      justify-content: center;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+	  height: 40px;
+	  width: 100%;
+	  background-color: black;
+	  bottom: 0;
+	  left: 0;
+	  border-top-style: inherit;
+      border-top-width: thin;
+      padding-bottom: 10px;
+      opacity: 0.8;
+}
+
+/*
+* — Address Footer —
+*/
+
+#address {
+    padding-top: 11px;
+    float: left;
+}
+
+/*
+* — Copyright Footer —
+*/
+
+#copyright {
+    padding-top: 11px;
+    float: right;
+    position: relative;
+}
+
+/*
+* — Social Icons Footer —
+*/
+
+#icon {
+    padding-top: 11px;
+    float: left;
+}
+
+/*
+* — Not used yet —
+*/
+
+#hiddenfooter {
+      height: 400px;
+	  width: 100%;
+	  background-image: none;
+	  border-top-style: inherit;
+      border-top-width: thin;
+      padding-bottom: 10px;
+      background-color: white;
+}
+
+/*
+* — All The Small Things —
+*/
+
+ul {
+    font-family: Gill Sans, Verdana;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    font-size: 11px;
+    text-align: left; 
+    text-decoration: none;
+    color: black;
+    padding-left:0;
+}
+
+li {
+    font-family: Gill Sans, Verdana;
+	line-height: 14px;
+    font-size: 11px;
+    text-align: left; 
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+    list-style-position: inside;
+    padding-left:0;
+    margin-bottom: 5px;
+}
+
+a  {
+    text-decoration: none;
+    color: white;
+    font-family: Gill Sans, Verdana;
+	font-size: 13px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+a:hover {
+    color: orange;
+}
+
+span {
+    font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Gill Sans, Verdana;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+h2 {
+    text-align: center;
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+    font-size: 80px;
+    font-weight: bold;
+    color: orange;
+    opacity: 0.5;
+}
+
+h3 {
+    text-align: center left;
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    left: 10px;
+    position: relative;
+}
+
+h4 {
+    font-size: 8px;
+    font-weight: bold;
+    font-family: Gill Sans, Verdana;
+	line-height: 14px;
+	text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 20px;
+    font-family: Gill Sans, Verdana;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+
+
+h6 {
+    font-family: Gill Sans, Verdana;
+	font-size: 13px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+p {
+    font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: lighter;
+}
+
+/*
+* — Not Sure If I Need You Or Not, Better Stay —
+*/
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+html {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+}
+
+/* CSS Clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; } /* IE 6/7 */
+
+
+/* lightbox hacks */
+#lightbox-container-image-data-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
